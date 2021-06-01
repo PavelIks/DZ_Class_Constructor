@@ -3,23 +3,37 @@
 class Apple
 {
 	public:
-		char* Color_Apple;
-		float Cost;
 		Apple()
 		{
-			Color_Apple = (char*)"Цвет";
-			Cost = 0.0f;
+			color_apple = (char*)"Красный";
+			cost = 0.1f;
 		}
-		Apple(char* _Color_Apple, float _Cost)
+		Apple(char* _color_apple, float _cost)
 		{
-			Color_Apple = _Color_Apple;
-			Cost = _Cost;
+			color_apple = _color_apple;
+			cost = _cost;
 		}
 		void show_info()
 		{
-			std::cout << "Цвет яблока: " << Color_Apple << "\n" << "Цена яблока" << Cost << "\n";
+			std::cout << "Цвет яблока: " << color_apple << "\n" << "Цена яблока: " << cost << "\n";
 		}
-
+		//set-ер	(установить значение)
+		void set_cost(float _cost)
+		{
+			cost = _cost;
+		}
+		void set_color_apple(char* _color_apple)
+		{
+			color_apple = _color_apple;
+		}
+		//get-ер	(получить значение)
+		char* get_color_apple()
+		{
+			return color_apple;
+		}
+	private:
+		char* color_apple;
+		float cost;
 };
 
 int main()
@@ -27,62 +41,18 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	Apple apple((char*)"Зелёный", 0.99);
 	apple.show_info();
+
+	/*test.cost = 1;
+	test.color_apple = 'c';*/
+
+	//set-ора
+	apple.set_cost(2.33);
+	apple.set_color_apple((char*)"Красный");
+	//get-ора
+	std::cout << apple.get_color_apple() << "\n";
+
+	apple.show_info();
 }
 
 
 
-
-
-
-
-//методы растить гнить
-//геты: получить вес
-//сетеры : съел или не съел
-
-
-/*
-#include <iostream>
-class Test {
-public:
-	Test() {
-		x = 0;
-		c = '_';
-		f = 0.0f;
-	}
-	Test(int _x, char _c, float _f) {
-		x = _x;
-		c = _c;
-		f = _f;
-	}
-	void show_info() {
-		std::cout << "x:\t" << x << "\nc:\t" << c << "\nf:\t" << f << "\n";
-	}
-	//set-ер	(установить значение)
-	void setX(int _x) {
-		x = _x;
-	}
-	//get-ер	(получить значение)
-	int getX() {
-		return x;
-	}
-private:
-	float f;
-	int x;
-	char c;
-};
-
-int main()
-{
-	std::cout << "Hello World!\n";
-	Test test(11, 'b', 33.33);
-	/*test.x = 1;
-	test.c = 'c';*/
-test.show_info();
-//вызов set-ора
-test.setX(8188);
-test.show_info();
-//вызов get-ора
-std::cout << test.getX() << "\n";
-}
-
-*/
