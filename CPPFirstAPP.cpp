@@ -5,39 +5,39 @@ class Apple
 	public:
 		Apple()
 		{
-			color_apple = (char*)"Красный";
-			cost_apple = 0.1f;
+			apple_color = (char*)"Красный";
+			apple_cost = 0.1f;
 		}
-		Apple(char* _color_apple, float _cost)
+		Apple(char* _apple_color, float _apple_cost)
 		{
-			color_apple = _color_apple;
-			cost_apple = _cost;
+			apple_color = _apple_color;
+			apple_cost = _apple_cost;
 		}
 		void show_info()
 		{
-			std::cout << "Цвет яблока: " << color_apple << "\n" << "Цена яблока: " << cost_apple << "\n";
+			std::cout << "Цвет яблока: " << apple_color << "\n" << "Цена яблока: " << apple_cost << "\n";
 		}
 		//	set
-		void set_cost_apple(float _cost_apple)
+		void set_apple_cost(float _apple_cost)
 		{
-			cost_apple = _cost_apple;
+			apple_cost = _apple_cost;
 		}
-		void set_color_apple(char* _color_apple)
+		void set_apple_color(char* _apple_color)
 		{
-			color_apple = _color_apple;
+			apple_color = _apple_color;
 		}
 		//	get
-		char* get_color_apple()
+		char* get_apple_color()
 		{
-			return color_apple;
+			return apple_color;
 		}
-		float get_cost_apple()
+		float get_apple_cost()
 		{
-			return cost_apple;
+			return apple_cost;
 		}
 	private:
-		char* color_apple;
-		float cost_apple;
+		char* apple_color;
+		float apple_cost;
 };
 
 int main()
@@ -47,11 +47,11 @@ int main()
 	apple.show_info();
 
 	//	set
-	apple.set_cost_apple(2.33);
-	apple.set_color_apple((char*)"Красный");
+	apple.set_apple_cost(2.33);
+	apple.set_apple_color((char*)"Красный");
 	//	get
-	std::cout << apple.get_color_apple() << "\n";
-	std::cout << apple.get_cost_apple() << "\n";
+	std::cout << apple.get_apple_color() << "\n";
+	std::cout << apple.get_apple_cost() << "\n";
 
 	apple.show_info();
 }
